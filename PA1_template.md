@@ -19,7 +19,7 @@ stepsperday <- aggregate(steps ~ date, activitydata, sum, na.rm = TRUE)
 ```{r}
 hist(stepsperday$steps)
 ```
-
+![](figure/Rplot1.png)
    3.Calculate and report the mean and median of the total number of steps taken per day
    # mean
 ```{r}
