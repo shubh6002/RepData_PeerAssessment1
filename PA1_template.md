@@ -20,6 +20,7 @@ stepsperday <- aggregate(steps ~ date, activitydata, sum, na.rm = TRUE)
 hist(stepsperday$steps)
 ```
 ![](figure/Rplot1.png)
+
    3.Calculate and report the mean and median of the total number of steps taken per day
    # mean
 ```{r}
@@ -40,6 +41,7 @@ library(ggplot2)
 stepsPerInterval<-aggregate(steps~interval, data=activitydata, mean, na.rm=TRUE)
 plot(steps~interval, data=stepsPerInterval, type="l")
 ```
+![](figure/Rplot2.png)
   
   2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```{r, echo=TRUE}
@@ -79,6 +81,7 @@ for(i in 1:nrow(activityDataNoNA)){
 totalStepsPerDayNoNA <- aggregate(steps ~ date, data=activityDataNoNA, sum)
 hist(totalStepsPerDayNoNA$steps)
 ```
+![](figure/Rplot3.png)
 
 To calculate the mean and median total number of steps per day, we first find total number of steps per day
 ```{r, echo = TRUE}
@@ -114,5 +117,5 @@ library(lattice)
 xyplot(steps ~ interval | day, stepsByDay, type = "l", layout = c(1, 2), 
     xlab = "Interval", ylab = "Number of steps")
 ```
-
+![](figure/Rplot4.png)
 
